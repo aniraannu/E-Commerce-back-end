@@ -1,38 +1,15 @@
-# 13 Object-Relational Mapping (ORM): E-Commerce Back End
+# E-Commerce Back-end
 
-## Your Task
+A simple command line application that can be used to create SVG logo fies.The application enables users to enter inputs into a inquirer prompt in order to generate a logo "logo.svg" file which contains the users desired results as an SVG image.
 
-Internet retail, also known as **e-commerce**, plays a significant role within the electronics industry, as it empowers businesses and consumers alike to conveniently engage in online buying and selling of electronic products. In the latest available data from 2021, the industry in the United States alone was estimated to have generated the substantial amount of US$2.54 trillion, according to the United Nations Conference on Trade and Development. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to the prevalence of these platforms, developers should understand the fundamental architecture of e-commerce sites.
+## Description
+This repo contains the back-end code to manage an e-commerce site. The main objective of this project is to use  Object-Relational Mapping, which allows us to convert data between incompatible systems using object-oriented programming. ORM libraries, such as Sequelize, allow us to make calls to the database without having to write SQL queries, and can instead use Javascript. This project uses node.js, npm, express.js, sequelize, postgreSQL, and dotenv packages. There is no front-end for this app, therefore all interactions with the app go through Insomnia. The walk-through video below demonstrates the apps functionality.
 
-Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a PostgreSQL database.
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met. You’ll need to submit a link to the video and add it to the readme of your project.
 
-## User Story
-
-```md
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN a functional Express.js API
-WHEN I add my database name, PostgreSQL username, and PostgreSQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the PostgreSQL database
-WHEN I open API GET routes in Insomnia for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete data in my database
-```
-
-## Mock-Up
+## Getting Started
+The following animation demonstrates the application functionality: 
+![A user can input the logo text, text color, shape of the logo and logo color using the command prompt.](./Assets/Demo-video.mp4)
 
 The following animation shows the application's GET routes to return all categories, all products, and all tags being tested in Insomnia:
 
@@ -45,216 +22,63 @@ The following animation shows the application's GET routes to return a single ca
 The following animation shows the application's POST, PUT, and DELETE routes for categories being tested in Insomnia:
 
 ![In Insomnia, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Category.”](./Assets/13-orm-homework-demo-03.gif)
+### Dependencies
 
-Your walkthrough video should also show the POST, PUT, and DELETE routes for products and tags being tested in Insomnia.
+* express 4.17.1
+* dotenv 8.2.0
+* pg 8.11.3
+* sequelize 5.21.7
 
-## Getting Started
+### Installing
 
-This Challenge will require a video submission. Refer to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
+* Clone the repo: git clone https://github.com/aniraannu/SVG-logo-maker
 
-You’ll need to use the [pg](https://node-postgres.com/) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your Express.js API to a PostgreSQL database and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data.
+* Open in VS Code. If you do not have VS code you must install it.
 
-Use the `schema.sql` file in the `db` folder to create your database with PostgreSQL shell commands. Use environment variables to store sensitive data like your PostgreSQL username, password, and database name.
+* Using the terminal, install node.js v16. If you have homebrew, the command should look like the following (brew install node@16), however this may vary and the documentation should be consulted.
 
-### Database Models
+* Once node.js v16 is installed, in the terminal, utilize the command npm init -y to initialize and create a package.json where project files will be stored.
 
-Your database should contain the following four models, including the requirements listed for each model:
+* Next, use the terminal to run the command npm i to install the dependencies associated with this application (developers may need to install inquirer and jest directly from the command line, to do so the command for inquirer will be npm i inquirer@8.2.4 to install v8.2.4 of the inquirer, and npm i jest to install the latest version of jest).
 
-* `Category`
+* Start the Server, Sync the Sequelize models to the PostgreSQL database.
 
-  * `id`
+* User will need to use the PostgreSQL and Sequelize packages to connect your Express.js API to a PostgreSQL database and the dotenv package to use environment variables to store sensitive data.
 
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+* Use the schema.sql file in the db folder to create the database with PostgresSQL shell commands.
 
-  * `category_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+* Use environment variables to store sensitive data such as: PostgreSQL username, password, and database name.
 
-* `Product`
+* Run npm run seed to seed data to the database to test the routes.
 
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+### Executing program
 
-  * `product_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+* The application code can be cloned from the following Github link:
+[GitHub-E-Commerce-back-end](https://github.com/aniraannu/E-Commerce-back-end)
 
-  * `price`
-  
-    * Decimal.
-  
-    * Doesn't allow null values.
-  
-    * Validates that the value is a decimal.
+## Help
 
-  * `stock`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set a default value of `10`.
-  
-    * Validates that the value is numeric.
+NA
 
-  * `category_id`
-  
-    * Integer.
-  
-    * References the `Category` model's `id`.
+## Authors
 
-* `Tag`
+Contributors names and contact info
 
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+Anira Raveendran
+[@aniraannu](https://github.com/aniraannu)
 
-  * `tag_name`
-  
-    * String.
+## Version History
 
-* `ProductTag`
+* 0.1
+    * Initial Release
 
-  * `id`
+## License
 
-    * Integer.
+None
 
-    * Doesn't allow null values.
+## Acknowledgments
 
-    * Set as primary key.
+Inspiration, code snippets, etc.
 
-    * Uses auto increment.
-
-  * `product_id`
-
-    * Integer.
-
-    * References the `Product` model's `id`.
-
-  * `tag_id`
-
-    * Integer.
-
-    * References the `Tag` model's `id`.
-
-### Associations
-
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
-
-* `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
-
-* `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
-
-> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
-
-### Fill Out the API Routes to Perform RESTful CRUD Operations
-
-Fill out the unfinished routes in `product-routes.js`, `tag-routes.js`, and `category-routes.js` to perform create, read, update, and delete operations using your Sequelize models.
-
-Note that the functionality for creating the many-to-many relationship for products has already been completed for you.
-
-> **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
-
-### Seed the Database
-
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
-
-### Sync Sequelize to the Database on Server Start
-
-Create the code needed in `server.js` to sync the Sequelize models to the PostgreSQL database on server start.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 10%
-
-* The GitHub repository containing your application code.
-
-### Walkthrough Video: 37%
-
-* A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
-
-* The walkthrough video must show all of the technical acceptance criteria being met.
-
-* The walkthrough video must demonstrate how to create the schema from the PostgreSQL shell.
-
-* The walkthrough video must demonstrate how to seed the database from the command line.
-
-* The walkthrough video must demonstrate how to start the application’s server.
-
-* The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia.
-
-* The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia.
-
-* The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Connects to a PostgreSQL database using the [pg](https://node-postgres.com/) and [Sequelize](https://www.npmjs.com/package/sequelize) packages.
-
-  * Stores sensitive data, like a user’s PostgreSQL username, password, and database name, using environment variables through the [dotenv](https://www.npmjs.com/package/dotenv) package.
-
-  * Syncs Sequelize models to a PostgreSQL database on the server start.
-
-  * Includes column definitions for all four models outlined in the Challenge instructions.
-
-  * Includes model associations outlined in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+* [dbader](https://github.com/dbader/readme-template)
+* [Starter-Code]
