@@ -10,8 +10,8 @@ This repo contains the back-end code to manage an e-commerce site. The main obje
 
 
 ## Getting Started
-The following animation demonstrates the application functionality: 
-![A user can input the logo text, text color, shape of the logo and logo color using the command prompt.](./Assets/Demo-video.mp4)
+If you'd like to see a full demo of the application, please visit the following link: Demo Video on Google Drive
+https://drive.google.com/file/d/1asPV9N_UikeoguPxo5CoGGvvnzNnADz4/view?usp=sharing
 
 The following animation shows the application's GET routes to return all categories, all products, and all tags being tested in Insomnia:
 
