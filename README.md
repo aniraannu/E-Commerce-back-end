@@ -1,6 +1,8 @@
 # E-Commerce Back-end
 
-A simple command line application that can be used to create SVG logo fies.The application enables users to enter inputs into a inquirer prompt in order to generate a logo "logo.svg" file which contains the users desired results as an SVG image.
+Internet retail, also known as **e-commerce**, plays a significant role within the electronics industry, as it empowers businesses and consumers alike to conveniently engage in online buying and selling of electronic products. In the latest available data from 2021, the industry in the United States alone was estimated to have generated the substantial amount of US$2.54 trillion, according to the United Nations Conference on Trade and Development. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to the prevalence of these platforms, developers should understand the fundamental architecture of e-commerce sites.
+
+This project is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a PostgreSQL database.
 
 ## Description
 This repo contains the back-end code to manage an e-commerce site. The main objective of this project is to use  Object-Relational Mapping, which allows us to convert data between incompatible systems using object-oriented programming. ORM libraries, such as Sequelize, allow us to make calls to the database without having to write SQL queries, and can instead use Javascript. This project uses node.js, npm, express.js, sequelize, postgreSQL, and dotenv packages. There is no front-end for this app, therefore all interactions with the app go through Insomnia. The walk-through video below demonstrates the apps functionality.
